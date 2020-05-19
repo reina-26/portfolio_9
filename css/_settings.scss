@@ -1,0 +1,125 @@
+// scss index
+//
+// colors
+// -- sns
+// original
+//
+
+
+
+// colors
+$color-txt:#2d2421;
+$color-txt-sub:#9b908c;
+
+// Examples
+$color-main:#f7e7da;
+// $color-base: #faf4f2;
+$color-accent:#f7785e;
+// $color-line:#333;
+$color-bg:#faf4f2;
+$color-bg2:#e3d5d1;
+$color-page:#fadbd4;
+
+// -- sns
+$color-facebook:#3b5998;
+$color-twitter:#55acee;
+$color-google:#dd4b39;
+$color-hatena:#008fde;
+$color-line:#00b900;
+
+// fonts
+$font-jp: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "Meiryo UI", "メイリオ", Meiryo, sans-serif;
+$font-en: 'Pacifico', cursive;
+
+// original
+@mixin orignal-expamle {
+	color: red;
+}
+
+@mixin flex-sb {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin form-txt-reset {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+}
+@mixin form-txtarea-reset {
+  appearance: none;
+  resize: none;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+@mixin overflow-line {
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+@mixin overflow-lines($row:2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $row;
+  text-overflow: ellipsis;
+}
+
+//breakpoint
+$break-tab: 768px;
+$break-pc: 1024px;
+
+// -- three point
+// pcのみ
+@mixin break-lpc {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin break-pc {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+// pcとtab共通
+@mixin break-pc-tab {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+// tabとsp共通
+@mixin break-tab-sp {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+// tabのみ
+@mixin break-tab {
+  @media screen and (max-width: 1023px) and (min-width: 768px) {
+    @content;
+  }
+}
+
+// large-spのみ
+@mixin break-lsp {
+  @media screen and (max-width: 1023px) and (min-width: 480px) {
+    @content;
+  }
+}
+// spのみ
+@mixin break-sp {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+// small-spのみ
+@mixin break-ssp {
+  @media screen and (max-width: 374px) {
+    @content;
+  }
+}
